@@ -1,4 +1,5 @@
 annotated-types
+authlib
 blinker
 cachetools
 certifi
