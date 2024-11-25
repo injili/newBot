@@ -41,18 +41,24 @@
       rel="stylesheet"
     />
   </head>
-  <body class="m-2 bg-neutral-100" style="font-family: 'Alata'">
+  <body class="h-screen bg-neutral-100" style="font-family: 'Alata'">
     {% if session %}
     <header>
       <div class="flex justify-center">
         <!--Header section-->
-        <nav class="text-center font-extrabold text-forth text-5xl p-4">
-          <h1 style="font-family: 'Alata', sans-serif">ProcedureBot</h1>
-          <h1 style="font-family: 'Alata', sans-serif">
+        <nav class="text-center font-extrabold text-forth p-4">
+          <h1 style="font-family: 'Alata', sans-serif" class="text-7xl">
+            ProcedureBot
+          </h1>
+          <h1 style="font-family: 'Alata', sans-serif" class="text-5xl">
             Welcome {{session.userinfo.name}}
           </h1>
+          <p
+            class="text-forth border border-forth px-4 m-4 hover:text-white hover:bg-forth"
+          >
+            <a href="/logout">LOGOUT</a>
+          </p>
         </nav>
-        <p><a href="/logout">Logout</a></p>
       </div>
     </header>
     <main class="p-4">
@@ -215,8 +221,17 @@
       });
     </script>
     {% else %}
-    <h1>Welcome Guest</h1>
-    <p><a href="/login">Login</a></p>
-    {% endif %}
+    <div class="flex flex-col gap-8 items-center justify-center h-full w-full">
+      <h1 class="text-center font-extrabold text-forth text-9xl p-4">
+        WELCOME TO<br />PROCEDUREBOT
+      </h1>
+      <p
+        class="text-forth font-bold text-5th border border-2 border-forth p-4 hover:text-white hover:bg-forth"
+      >
+        <a href="/login">LOGIN</a>
+      </p>
+      <p class="text-forth">Built And Maintained by Carla Cheruto</p>
+      {% endif %}
+    </div>
   </body>
 </html>
